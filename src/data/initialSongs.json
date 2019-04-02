@@ -6,7 +6,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/BETWEEN%20FRIENDS%20-%20affection%20(Official%20Video).mp3"
         },
-        "image": "https://i.ytimg.com/vi/SRW1AAqYH6k/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/SRW1AAqYH6k/maxresdefault.jpg",
+        "star": "true"
     },
     {
         "title": "Billie Eilish COPYCAT (Acoustic) Mahogany Session",
@@ -15,7 +16,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Billie%20Eilish%20COPYCAT%20(Acoustic)%20Mahogany%20Session.mp3"
         },
-        "image": "https://i.ytimg.com/vi/qdMnBgzSdeo/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/qdMnBgzSdeo/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "Chelou - Halfway to Nowhere",
@@ -24,7 +26,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Chelou%20-%20Halfway%20to%20Nowhere%20(Official%20Music%20Video).mp3"
         },
-        "image": "https://i.ytimg.com/vi/_WLgpaMkBxE/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/_WLgpaMkBxE/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "Chet Faker - Gold",
@@ -33,7 +36,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Chet%20Faker%20-%20Gold%20(Official%20Music%20Video).mp3"
         },
-        "image": "https://s2-ssl.dmcdn.net/KeDMy/x1080-KFk.jpg"
+        "image": "https://s2-ssl.dmcdn.net/KeDMy/x1080-KFk.jpg",
+        "star": "false"
     },
     {
         "title": "Des Rocs - Used to the Darkness",
@@ -42,7 +46,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Des%20Rocs%20-%20Used%20to%20the%20Darkness%20(Audio).mp3"
         },
-        "image": "https://i.ytimg.com/vi/EN8VH1gSwKM/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/EN8VH1gSwKM/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "Jon Bellion - Stupid Deep",
@@ -51,7 +56,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Jon%20Bellion%20-%20Stupid%20Deep.mp3"
         },
-        "image": "https://i.ytimg.com/vi/xekMl9ILQIk/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/xekMl9ILQIk/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "Milky Chance - Flashed Junk Mind",
@@ -60,14 +66,16 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Milky%20Chance%20-%20Flashed%20Junk%20Mind%20(official).mp3"
         },
-        "image": "https://s2.dmcdn.net/LPodc/x1080-Tcc.jpg"
+        "image": "https://s2.dmcdn.net/LPodc/x1080-Tcc.jpg",
+        "star": "false"
     },
     {
         "title": "Ren - Hold On",
         "sources": {
             "ogg": "",
             "wav": "",
-            "mp3": "https://i.ytimg.com/vi/n7jsWZmHhcM/maxresdefault.jpg"
+            "mp3": "https://i.ytimg.com/vi/n7jsWZmHhcM/maxresdefault.jpg",
+            "star": "false"
         },
         "image": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Ren%20-%20Hold%20On.mp3"
     },
@@ -78,7 +86,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Ren%20-%20Satellite%20Girl.mp3"
         },
-        "image": "https://i.ytimg.com/vi/y22m3KksPRw/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/y22m3KksPRw/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "Samm Henshaw - Church",
@@ -87,7 +96,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Samm%20Henshaw%20-%20Church%20(Official%20Video)%20ft.%20EARTHGANG.mp3"
         },
-        "image": "https://i.ytimg.com/vi/I_8-P4eZ1jA/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/I_8-P4eZ1jA/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "The Big Push - English Man In New York live",
@@ -96,7 +106,8 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/The%20Big%20Push%20-%20English%20Man%20In%20New%20York%20live.mp3"
         },
-        "image": "https://i.ytimg.com/vi/2E0DXdVS8Tg/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/2E0DXdVS8Tg/maxresdefault.jpg",
+        "star": "false"
     },
     {
         "title": "The Prodigy on an Acoustic Guitar - Luca Stricagnoli",
@@ -105,6 +116,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/The%20Prodigy%20on%20an%20Acoustic%20Guitar%20-%20Luca%20Stricagnoli.mp3"
         },
-        "image": "https://i.ytimg.com/vi/CIpOxa5hxOw/maxresdefault.jpg"
+        "image": "https://i.ytimg.com/vi/CIpOxa5hxOw/maxresdefault.jpg",
+        "star": "false"
     }
 ]

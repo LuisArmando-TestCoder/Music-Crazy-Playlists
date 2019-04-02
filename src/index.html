@@ -4,12 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/styles.css">
-  <title>Javascript 2 CETAV</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>Audio Music Player</title>
 </head>
 <body>
-  <h1>Javascript 2 CETAV</h1>
-  <div id="container"></div>
-  <script src="js/script.js"></script>
+  <div id="container">
+    <div class="audio-player">
+      <header class="audio-player__header">
+        <button class="prev"></button>
+        <button class="play"></button>
+      <!--   <button class="pause"></button> -->
+        <button class="next"></button>
+      </header>
+      <div class="audio-player__middle">
+        <div class="song">
+          <div class="song__music-note"></div>
+          <h3 class="song__title">Default title</h3>
+        </div>
+        <button class="star"></button>
+      </div>
+      <div class="audio-timeline">
+        <i class="audio-timeline__current">00:00</i>
+        <i class="audio-timeline__final">xx:xx</i>
+      </div>
+      <div class="audio-bar">
+        <button class="audio-bar__loader"></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/quicker.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/get-initial-songs.js"></script>
 </body>
 </html>

@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  background: #101010;
+}
+
+button {
+  transition: 0.5s;
+  mix-blend-mode: difference;
+  display: block;
+  background: var(--white);
+  border: 0;
+  width: 40px;
+  height: 40px;
+  transition: 0.25s;
+  transform: scale(0.75);
+}
+button:hover {
+  background: var(--accent-color);
+  cursor: pointer;
+}

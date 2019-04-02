@@ -1,26 +1,3 @@
-:root {
-  --accent-color: #f00;
-  --white: #fff; }
-
-body {
-  margin: 0;
-  background: #101010; }
-
-button {
-  transition: 0.5s;
-  mix-blend-mode: difference;
-  display: block;
-  background: var(--white);
-  border: 0;
-  width: 40px;
-  height: 40px;
-  transition: 0.25s;
-  transform: scale(0.75); }
-
-button:hover {
-  background: var(--accent-color);
-  cursor: pointer; }
-
 .audio-player {
   position: fixed;
   left: 0;
@@ -31,25 +8,27 @@ button:hover {
   background-image: url("https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
-
+  background-position: center;
+}
 .audio-player__header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0; }
-
+  margin: 0;
+}
 .audio-player__middle {
   display: grid;
   grid-template-columns: 1fr 50px;
-  margin: 15px 0; }
+  margin: 15px 0;
+}
 
 .audio-timeline {
   display: grid;
   margin: 15px 0;
-  grid-template-columns: repeat(2, 1fr); }
-
+  grid-template-columns: repeat(2, 1fr);
+}
 .audio-timeline__final {
-  margin-left: auto; }
+  margin-left: auto;
+}
 
 .audio-bar {
   background: var(--white);
@@ -58,8 +37,8 @@ button:hover {
   position: relative;
   border-radius: 15px;
   transition: 0.25s;
-  mix-blend-mode: difference; }
-
+  mix-blend-mode: difference;
+}
 .audio-bar__loader {
   mix-blend-mode: multiply;
   position: absolute;
@@ -69,73 +48,76 @@ button:hover {
   margin: auto;
   background: var(--accent-color);
   transform: scale(0.35);
-  transition: 0.1s; }
-
+  transition: 0.1s;
+}
 .audio-bar__loader:hover {
   transform: scale(0.5);
-  border-radius: 50%; }
+  border-radius: 50%;
+}
 
 .song {
   display: grid;
-  grid-template-columns: 75px 1fr; }
-
+  grid-template-columns: 75px 1fr;
+}
 .song__music-note {
   width: 50px;
   height: 50px;
-  position: relative; }
-
+  position: relative;
+}
 .song__music-note::after,
 .song__music-note::before {
   content: "";
   background: var(--white);
   display: block;
-  position: absolute; }
-
+  position: absolute;
+}
 .song__music-note::after {
   width: 15px;
   height: 15px;
   border-radius: 50%;
   top: 30px;
-  box-shadow: 35px 0 var(--white); }
-
+  box-shadow: 35px 0 var(--white);
+}
 .song__music-note::before {
   width: 50px;
   height: 50px;
   -webkit-clip-path: polygon(20% 0, 100% 0, 100% 75%, 90% 75%, 90% 10%, 30% 10%, 30% 75%, 20% 75%);
-  clip-path: polygon(20% 0, 100% 0, 100% 75%, 90% 75%, 90% 10%, 30% 10%, 30% 75%, 20% 75%); }
-
+  clip-path: polygon(20% 0, 100% 0, 100% 75%, 90% 75%, 90% 10%, 30% 10%, 30% 75%, 20% 75%);
+}
 .song__title {
   background: #ff000088;
   border-radius: 50px;
   padding: 10px;
   overflow: hidden;
-  font-family: sans-serif; }
+  font-family: sans-serif;
+}
 
 .next,
 .prev {
   -webkit-clip-path: polygon(75% 50%, 75% 0, 100% 0, 100% 100%, 75% 100%, 75% 50%, 0 100%, 0 0);
-  clip-path: polygon(75% 50%, 75% 0, 100% 0, 100% 100%, 75% 100%, 75% 50%, 0 100%, 0 0); }
-
+  clip-path: polygon(75% 50%, 75% 0, 100% 0, 100% 100%, 75% 100%, 75% 50%, 0 100%, 0 0);
+}
 .prev {
-  transform: rotate(180deg) scale(0.75); }
-
+  transform: rotate(180deg) scale(0.75);
+}
 .next {
-  margin-left: auto; }
+  margin-left: auto;
+}
 
 .play {
   transform: scale(1);
   margin: auto;
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
-  clip-path: polygon(0% 0%, 0% 100%, 100% 50%); }
-
+  clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+}
 .pause {
   -webkit-clip-path: polygon(60% 100%, 60% 0, 80% 0, 80% 100%, 60% 100%, 40% 100%, 20% 100%, 20% 0, 40% 0, 40% 100%);
-  clip-path: polygon(60% 100%, 60% 0, 80% 0, 80% 100%, 60% 100%, 40% 100%, 20% 100%, 20% 0, 40% 0, 40% 100%); }
+  clip-path: polygon(60% 100%, 60% 0, 80% 0, 80% 100%, 60% 100%, 40% 100%, 20% 100%, 20% 0, 40% 0, 40% 100%);
+}
 
 .star {
   margin: 10px 0;
   margin-left: auto;
   -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
-
-/*# sourceMappingURL=style.css.map */
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
