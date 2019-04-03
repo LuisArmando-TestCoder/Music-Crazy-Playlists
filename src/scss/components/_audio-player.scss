@@ -2,13 +2,21 @@
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -160px;
   color: var(--white);
   padding: 15px 5%;
   background-image: url("https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+}
+.audio-player:hover {
+  bottom: 0;
 }
 .audio-player__header {
   display: grid;
@@ -36,7 +44,15 @@
   margin: 5px 0;
   position: relative;
   border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
   transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
   mix-blend-mode: difference;
 }
 .audio-bar__loader {
@@ -48,11 +64,31 @@
   margin: auto;
   background: var(--accent-color);
   transform: scale(0.35);
+  -webkit-transform: scale(0.35);
+  -moz-transform: scale(0.35);
+  -ms-transform: scale(0.35);
+  -o-transform: scale(0.35);
   transition: 0.1s;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  -ms-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transform: scale(0.35);
+  -moz-transform: scale(0.35);
+  -ms-transform: scale(0.35);
+  -o-transform: scale(0.35);
 }
 .audio-bar__loader:hover {
   transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .song {
@@ -87,6 +123,10 @@
 .song__title {
   background: #ff000088;
   border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
   padding: 10px;
   overflow: hidden;
   font-family: sans-serif;
@@ -99,6 +139,10 @@
 }
 .prev {
   transform: rotate(180deg) scale(0.75);
+  -webkit-transform: rotate(180deg) scale(0.75);
+  -moz-transform: rotate(180deg) scale(0.75);
+  -ms-transform: rotate(180deg) scale(0.75);
+  -o-transform: rotate(180deg) scale(0.75);
 }
 .next {
   margin-left: auto;
@@ -106,6 +150,10 @@
 
 .play {
   transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
   margin: auto;
   -webkit-clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
   clip-path: polygon(0% 0%, 0% 100%, 100% 50%);

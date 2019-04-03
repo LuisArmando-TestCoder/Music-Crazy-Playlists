@@ -10,10 +10,10 @@ function init(data) { // eslint-disable-line
       'clip-path': 'polygon(0% 0%, 0% 100%, 100% 50%)',
     },
     pauseElemStyle: {
-      '-webkit-clip-path': `polygon(60% 100%, 60% 0, 80% 0, 80% 
-                            100%, 60% 100%, 40% 100%, 20% 100%, 
+      '-webkit-clip-path': `polygon(60% 100%, 60% 0, 80% 0, 80%
+                            100%, 60% 100%, 40% 100%, 20% 100%,
                             20% 0, 40% 0, 40% 100%)`,
-      'clip-path': `polygon(60% 100%, 60% 0, 80% 0, 80% 100%, 60% 
+      'clip-path': `polygon(60% 100%, 60% 0, 80% 0, 80% 100%, 60%
                     100%, 40% 100%, 20% 100%, 20% 0, 40% 0, 40% 100%)`,
     },
   };
@@ -25,7 +25,8 @@ function init(data) { // eslint-disable-line
   const playButton = document.querySelector('.play');
   let playBool = true;
   audio.addEventListener('ended', () => {
-    songIndex++;
+    songIndex += 1;
+    if (songIndex > data.length - 1) songIndex = 0;
     audio.src = data[songIndex].sources.mp3;
     audio.play();
   });
