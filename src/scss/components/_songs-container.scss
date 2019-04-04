@@ -72,7 +72,7 @@
   overflow: hidden;
 }
 .songs-container__playlist .play-song__title::after {
-  content: ' playing';
+  content: ' in playlist';
   text-transform: lowercase;
   color: var(--accent-color);
   font-size: 10px;

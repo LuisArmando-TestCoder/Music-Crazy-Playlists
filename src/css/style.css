@@ -38,11 +38,11 @@ button:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: 0.2s;
-  -webkit-transition: 0.2s;
-  -moz-transition: 0.2s;
-  -ms-transition: 0.2s;
-  -o-transition: 0.2s;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
 }
 
 .audio-player:hover {
@@ -291,7 +291,7 @@ button:hover {
 }
 
 .songs-container__playlist .play-song__title::after {
-  content: " playing";
+  content: " in playlist";
   text-transform: lowercase;
   color: var(--accent-color);
   font-size: 10px;
@@ -302,15 +302,11 @@ button:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f4f4f4;
+  background: var(--white);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--accent-color);
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--ac);
 }
 
 /*# sourceMappingURL=style.css.map */

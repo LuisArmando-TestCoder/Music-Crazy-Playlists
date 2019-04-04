@@ -1,56 +1,70 @@
 const SongsArray = (function() {
-  // eslint-disable-line
   let instance = null;
   return class Singleton {
-    constructor(data) {
+    constructor(initialSongsData) {
       const localSongs = localStorage.getItem(`songsArray`);
 
-      if (data.length) this.data = data;
-      else this.data = [];
-
-      if (localSongs) this.data = this.data.concat(JSON.parse(localSongs));
-
-      init(this.data); // eslint-disable-line
+      if (localSongs) this.initialSongsData = JSON.parse(localSongs);
+      else if (initialSongsData.length) this.initialSongsData = initialSongsData;
+      else this.initialSongsData = [];
+      this.playlist = [];
+      this.availableSongs = this.initialSongsData;
 
       return instance ? instance : (instance = this); // eslint-disable-line
     }
 
-    updateList(parent) {
-      this.data.forEach((obj) => {
+    updateAvailableSongs(parent) {
+      this.initialSongsData.forEach((obj) => {
         quicker().createElementsFromArray(parent, [
           {
-            name: `div`,
+            name: 'div',
             attr: {
-              class: `play-song`,
-              draggable: `true`,
-              ondragstart: `event.dataTransfer.setData('text/plain',null)`
+              class: 'play-song',
+              draggable: 'true',
+              ondragstart: 'event.dataTransfer.setData("text/plain",null)',
+              'data-compose': JSON.stringify(obj),
             },
             children: [
               {
-                name: `h4`,
+                name: 'h4',
                 attr: {
-                  class: `play-song__title`
+                  class: 'play-song__title',
                 },
-                inner: obj.title
+                inner: obj.title,
               },
               {
-                name: `button`,
+                name: 'button',
                 attr: {
-                  class: `star`
-                }
-              }
-            ]
-          }
+                  class: 'star',
+                },
+              },
+            ],
+          },
         ]);
       });
+
+      init(this); // eslint-disable-line
+    }
+
+    composeArray(wrapper, array) {
+      const children = wrapper.children;
+      const composedArray = array;
+
+      composedArray.length = 0;
+      // empties the array without changing reference
+
+      for (let i = 0; i < children.length; i += 1) {
+        const objComposed = JSON.parse(children[i].getAttribute('data-compose'));
+        composedArray.push(objComposed);
+      }
     }
 
     createDragDrop(attr, value) {
       let dragged;
+      const songsWrappers = document.getElementsByClassName('songs-container__songs-wrapper');
 
       document.addEventListener(`dragstart`, (event) => {
         dragged = event.target;
-        console.log(dragged)
       }, false);
 
       document.addEventListener(`dragover`, (event) => {
@@ -59,9 +73,11 @@ const SongsArray = (function() {
 
       document.addEventListener(`drop`, (event) => {
         const elem = event.target;
-        console.log(elem.getAttribute(attr));
+
         if (elem.getAttribute(attr) === value) {
           elem.insertBefore(dragged, elem.childNodes[0]);
+          this.composeArray(songsWrappers[0], this.availableSongs);
+          this.composeArray(songsWrappers[1], this.playlist);
         }
       }, false);
     }
