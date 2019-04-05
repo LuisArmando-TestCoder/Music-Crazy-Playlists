@@ -7,7 +7,10 @@
 
 body {
   margin: 0;
-  background: #101010;
+  background-image: url("https://cdnb.artstation.com/p/assets/images/images/006/209/861/large/yannick-corboz-dfms-int-4.jpg?1496825047");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 button {
@@ -37,7 +40,6 @@ button:hover {
   color: var(--white);
   padding: 100px 5%;
   background-color: #ff000088;
-  background-image: url("https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -72,6 +74,10 @@ button:hover {
   display: grid;
   margin: 15px 0;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.audio-timeline i {
+  mix-blend-mode: difference;
 }
 
 .audio-timeline__final {
@@ -117,6 +123,7 @@ button:hover {
 }
 
 .song__music-note {
+  mix-blend-mode: difference;
   width: 50px;
   height: 50px;
   position: relative;
@@ -192,6 +199,7 @@ button:hover {
 }
 
 .star {
+  transform: scale(0.75);
   margin: 10px 0;
   margin-left: auto;
   -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
@@ -231,7 +239,7 @@ button:hover {
 }
 
 .songs-container__playlist {
-  background: var(--white);
+  background: #ffffff88;
 }
 
 .play-song {
