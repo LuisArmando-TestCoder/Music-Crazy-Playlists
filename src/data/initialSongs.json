@@ -6,8 +6,18 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/BETWEEN%20FRIENDS%20-%20affection%20(Official%20Video).mp3"
         },
-        "image": "https://i.ytimg.com/vi/SRW1AAqYH6k/maxresdefault.jpg",
+        "image": "https://cdna.artstation.com/p/assets/images/images/012/275/182/large/mathias-zamecki-2.jpg?1533930247",
         "star": "true"
+    },
+    {
+        "title": "Samm Henshaw - Church",
+        "sources": {
+            "ogg": "",
+            "wav": "",
+            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Samm%20Henshaw%20-%20Church%20(Official%20Video)%20ft.%20EARTHGANG.mp3"
+        },
+        "image": "https://cdnb.artstation.com/p/assets/images/images/003/227/699/large/sylvain-sarrailh-bridgehdartstation.jpg?1471350763",
+        "star": "false"
     },
     {
         "title": "Billie Eilish COPYCAT (Acoustic) Mahogany Session",
@@ -16,7 +26,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Billie%20Eilish%20COPYCAT%20(Acoustic)%20Mahogany%20Session.mp3"
         },
-        "image": "https://i.ytimg.com/vi/qdMnBgzSdeo/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/016/668/453/large/fox3d-entertainment-genstealer-tank1-1.jpg?1553017593",
         "star": "false"
     },
     {
@@ -26,7 +36,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Chelou%20-%20Halfway%20to%20Nowhere%20(Official%20Music%20Video).mp3"
         },
-        "image": "https://i.ytimg.com/vi/_WLgpaMkBxE/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/016/674/695/large/maciej-kuciara-ultragigacity-03.jpg?1553034994",
         "star": "false"
     },
     {
@@ -36,7 +46,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Chet%20Faker%20-%20Gold%20(Official%20Music%20Video).mp3"
         },
-        "image": "https://s2-ssl.dmcdn.net/KeDMy/x1080-KFk.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/001/791/865/large/timothy-rodriguez-5-large.jpg?1452791361",
         "star": "false"
     },
     {
@@ -46,7 +56,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Des%20Rocs%20-%20Used%20to%20the%20Darkness%20(Audio).mp3"
         },
-        "image": "https://i.ytimg.com/vi/EN8VH1gSwKM/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/016/624/615/large/jorge-gonzalez-cover-uplox.jpg?1552863962",
         "star": "false"
     },
     {
@@ -56,7 +66,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Jon%20Bellion%20-%20Stupid%20Deep.mp3"
         },
-        "image": "https://i.ytimg.com/vi/xekMl9ILQIk/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/006/498/099/large/sylvain-sarrailh-notredame.jpg?1499075745",
         "star": "false"
     },
     {
@@ -66,7 +76,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Milky%20Chance%20-%20Flashed%20Junk%20Mind%20(official).mp3"
         },
-        "image": "https://s2.dmcdn.net/LPodc/x1080-Tcc.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/003/089/131/large/jarreau-wimberly-c1-sc5-sh3-bg-jwimberly-final-t3.jpg?1469543012",
         "star": "false"
     },
     {
@@ -74,10 +84,10 @@
         "sources": {
             "ogg": "",
             "wav": "",
-            "mp3": "https://i.ytimg.com/vi/n7jsWZmHhcM/maxresdefault.jpg",
+            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Ren%20-%20Hold%20On.mp3",
             "star": "false"
         },
-        "image": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Ren%20-%20Hold%20On.mp3"
+        "image": "https://cdnb.artstation.com/p/assets/images/images/004/393/383/large/rico-cilliers-1.jpg?1483371507"
     },
     {
         "title": "Ren - Satellite Girl",
@@ -86,17 +96,7 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Ren%20-%20Satellite%20Girl.mp3"
         },
-        "image": "https://i.ytimg.com/vi/y22m3KksPRw/maxresdefault.jpg",
-        "star": "false"
-    },
-    {
-        "title": "Samm Henshaw - Church",
-        "sources": {
-            "ogg": "",
-            "wav": "",
-            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/Samm%20Henshaw%20-%20Church%20(Official%20Video)%20ft.%20EARTHGANG.mp3"
-        },
-        "image": "https://i.ytimg.com/vi/I_8-P4eZ1jA/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/004/758/703/large/sylvain-sarrailh-mouffetard.jpg?1486043256",
         "star": "false"
     },
     {
@@ -106,17 +106,17 @@
             "wav": "",
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/The%20Big%20Push%20-%20English%20Man%20In%20New%20York%20live.mp3"
         },
-        "image": "https://i.ytimg.com/vi/2E0DXdVS8Tg/maxresdefault.jpg",
+        "image": "https://cdnb.artstation.com/p/assets/images/images/007/666/471/large/sylvain-sarrailh-restaurantsa.jpg?1507715779",
         "star": "false"
     },
     {
-        "title": "The Prodigy on an Acoustic Guitar - Luca Stricagnoli",
+        "title": "TENDER - Slow Love",
         "sources": {
             "ogg": "",
             "wav": "",
-            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/The%20Prodigy%20on%20an%20Acoustic%20Guitar%20-%20Luca%20Stricagnoli.mp3"
+            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/TENDER%20-%20Slow%20Love.mp3"
         },
-        "image": "https://i.ytimg.com/vi/CIpOxa5hxOw/maxresdefault.jpg",
+        "image": "https://cdna.artstation.com/p/assets/images/images/002/516/792/large/tim-barton-phantoms-1600.jpg?1462639377",
         "star": "false"
     }
 ]

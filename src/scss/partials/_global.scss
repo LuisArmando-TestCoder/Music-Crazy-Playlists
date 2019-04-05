@@ -4,7 +4,6 @@ body {
 }
 
 button {
-  transition: 0.5s;
   mix-blend-mode: difference;
   display: block;
   background: var(--white);
@@ -12,7 +11,10 @@ button {
   width: 40px;
   height: 40px;
   transition: 0.25s;
-  transform: scale(0.75);
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
 }
 button:hover {
   background: var(--accent-color);

@@ -18,11 +18,9 @@ const SongsArray = (function() {
       const timelineMark = document.querySelector('.audio-bar__loader');
       function mark() {
         let percentage = audio.currentTime / audio.duration * 100;
-        console.log(percentage)
         timelineMark.style.left = `${percentage}%`;
-        requestAnimationFrame(mark);
       }
-      mark();
+      audio.addEventListener('timeupdate', mark);
     }
 
     updateAvailableSongs(parent) {

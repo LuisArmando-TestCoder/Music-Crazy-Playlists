@@ -4,7 +4,6 @@
  */
 
 function init(singleton) { // eslint-disable-line
-  console.log(singleton);
   const buttons = {
     playElemStyle: {
       '-webkit-clip-path': 'polygon(0% 0%, 0% 100%, 100% 50%)',
@@ -20,6 +19,7 @@ function init(singleton) { // eslint-disable-line
   };
   const audio = new Audio();
   const playButton = document.querySelector('.play');
+  const background = document.querySelector('.audio-player');
 
   let songIndex = 0;
   let playBool = true;
@@ -30,13 +30,16 @@ function init(singleton) { // eslint-disable-line
     if (songIndex > singleton.playlist.length - 1) songIndex = 0;
     audio.src = singleton.playlist[songIndex].sources.mp3;
     audio.play();
+    background.style.setProperty('background-image', `url(${singleton.playlist[songIndex].image})`);
   });
   playButton.addEventListener('click', () => {
     if (singleton.playlist.length) {
-      audio.src = singleton.playlist[songIndex].sources.mp3;
+      let indexSource = singleton.playlist[songIndex].sources.mp3;
+      if (audio.src !== indexSource) audio.src = indexSource;
       if (playBool) {
         quicker().styleElems([playButton], buttons.pauseElemStyle); // eslint-disable-line
         audio.play();
+        background.style.setProperty('background-image', `url(${singleton.playlist[songIndex].image})`);
         if (singleton.playButton) {
           singleton.playButton = false;
           singleton.setTimeline(audio);
