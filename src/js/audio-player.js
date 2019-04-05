@@ -32,12 +32,15 @@ function init(singleton) { // eslint-disable-line
     audio.play();
   });
   playButton.addEventListener('click', () => {
-    console.table(singleton.playlist);
     if (singleton.playlist.length) {
       audio.src = singleton.playlist[songIndex].sources.mp3;
       if (playBool) {
         quicker().styleElems([playButton], buttons.pauseElemStyle); // eslint-disable-line
         audio.play();
+        if (singleton.playButton) {
+          singleton.playButton = false;
+          singleton.setTimeline(audio);
+        }
       } else {
         quicker().styleElems([playButton], buttons.playElemStyle); // eslint-disable-line
         audio.pause();

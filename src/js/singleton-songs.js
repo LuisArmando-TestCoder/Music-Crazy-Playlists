@@ -9,8 +9,20 @@ const SongsArray = (function() {
       else this.initialSongsData = [];
       this.playlist = [];
       this.availableSongs = this.initialSongsData;
+      this.playButton = true;
 
       return instance ? instance : (instance = this); // eslint-disable-line
+    }
+
+    setTimeline(audio) {
+      const timelineMark = document.querySelector('.audio-bar__loader');
+      function mark() {
+        let percentage = audio.currentTime / audio.duration * 100;
+        console.log(percentage)
+        timelineMark.style.left = `${percentage}%`;
+        requestAnimationFrame(mark);
+      }
+      mark();
     }
 
     updateAvailableSongs(parent) {
