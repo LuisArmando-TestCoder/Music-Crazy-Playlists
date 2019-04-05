@@ -138,7 +138,22 @@ function quicker() { // eslint-disable-line
     document.body.appendChild(parent);
   }
 
-  return { // eslint-disable-line
+
+  function numberToTime(num) {
+    let hours = Math.floor(num / 3600);
+    let minutes = Math.floor((num - (hours * 3600)) / 60);
+    let seconds = (num - (hours * 3600) - (minutes * 60)).toFixed(0);
+
+    if (hours < 10) hours = `0${hours}`;
+    if (minutes < 10) minutes = `0${minutes}`;
+    if (seconds < 10) seconds = `0${seconds}`;
+
+    if (!isNaN(num)) return `${parseInt(hours, 10) ? `${hours}:` : ''}${minutes}:${seconds}`;
+    return '--:--';
+  }
+
+  return {
+    numberToTime: numberToTime, // eslint-disable-line
     showFrameRate: showFrameRate, // eslint-disable-line
     styleElems: styleElems, // eslint-disable-line
     appendChildren: appendChildren, // eslint-disable-line

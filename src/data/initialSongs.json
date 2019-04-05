@@ -1,5 +1,15 @@
 [
-    {
+  {
+      "title": "TENDER - Slow Love",
+      "sources": {
+          "ogg": "",
+          "wav": "",
+          "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/TENDER%20-%20Slow%20Love.mp3"
+      },
+      "image": "https://cdna.artstation.com/p/assets/images/images/002/516/792/large/tim-barton-phantoms-1600.jpg?1462639377",
+      "star": "false"
+  },
+  {
         "title": "BETWEEN FRIENDS - affection",
         "sources": {
             "ogg": "",
@@ -107,16 +117,6 @@
             "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/The%20Big%20Push%20-%20English%20Man%20In%20New%20York%20live.mp3"
         },
         "image": "https://cdnb.artstation.com/p/assets/images/images/007/666/471/large/sylvain-sarrailh-restaurantsa.jpg?1507715779",
-        "star": "false"
-    },
-    {
-        "title": "TENDER - Slow Love",
-        "sources": {
-            "ogg": "",
-            "wav": "",
-            "mp3": "https://luisarmando-testcoder.github.io/keeper/initPlaylist/TENDER%20-%20Slow%20Love.mp3"
-        },
-        "image": "https://cdna.artstation.com/p/assets/images/images/002/516/792/large/tim-barton-phantoms-1600.jpg?1462639377",
         "star": "false"
     }
 ]

@@ -14,15 +14,6 @@ const SongsArray = (function() {
       return instance ? instance : (instance = this); // eslint-disable-line
     }
 
-    setTimeline(audio) {
-      const timelineMark = document.querySelector('.audio-bar__loader');
-      function mark() {
-        let percentage = audio.currentTime / audio.duration * 100;
-        timelineMark.style.left = `${percentage}%`;
-      }
-      audio.addEventListener('timeupdate', mark);
-    }
-
     updateAvailableSongs(parent) {
       this.initialSongsData.forEach((obj) => {
         quicker().createElementsFromArray(parent, [
