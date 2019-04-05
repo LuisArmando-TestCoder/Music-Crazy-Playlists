@@ -33,19 +33,19 @@ button:hover {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: -160px;
+  bottom: -260px;
   color: var(--white);
-  padding: 15px 5%;
+  padding: 100px 5%;
   background-color: #ff000088;
   background-image: url("https://images.pexels.com/photos/761543/pexels-photo-761543.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: 0.25s;
-  -webkit-transition: 0.25s;
-  -moz-transition: 0.25s;
-  -ms-transition: 0.25s;
-  -o-transition: 0.25s;
+  transition: 0.45s;
+  -webkit-transition: 0.45s;
+  -moz-transition: 0.45s;
+  -ms-transition: 0.45s;
+  -o-transition: 0.45s;
 }
 
 .audio-player:hover {
@@ -56,6 +56,10 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   margin: 0;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  left: 25px;
 }
 
 .audio-player__middle {
