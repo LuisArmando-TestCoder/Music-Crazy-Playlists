@@ -5,6 +5,15 @@
   grid-template-columns: 320px 1fr;
   grid-gap: 50px;
 }
+
+.songs-container__tabs {
+  position: relative;
+}
+
+.tabs__tab {
+  position: absolute;
+}
+
 .songs-container__wrapper {
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -18,11 +27,15 @@
 }
 
 .songs-container__songs-wrapper {
-  height: 80%;
+  min-height: 240px;
 }
 
 .songs-container__title {
   color: var(--white);
+  background: #ff0000aa;
+  padding: 30px;
+  position: sticky;
+  top: 0;
 }
 .songs-container__available-title {
   color: var(--black);

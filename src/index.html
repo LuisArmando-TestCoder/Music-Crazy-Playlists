@@ -1,56 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Audio Music Player</title>
-  </head>
-  <body>
-    <div id="container">
-      <section class="songs-container">
-        <section
-          class="songs-container__wrapper songs-container__available-songs"
-        >
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Audio Music Player</title>
+</head>
+
+<body>
+  <div id="container">
+    <div class="tabs-buttons">
+      <button class="tabs-buttons__button-tab">
+        Songs
+      </button>
+      <button class="tabs-buttons__button-tab">
+        Import
+      </button>
+    </div>
+    <section class="songs-container">
+      <div class="songs-container__tabs">
+        <section class="tabs__tab">
+          <h2>Submit a song</h2>
+          <form>
+            <div class="form-wrapper">
+              <div class="form-wrapper__input-wrapper">
+                <label for="song-name">
+                  Name
+                  <input placeholder="The name of the song goes here" type="text" name="song-name" id="song-name">
+                </label>
+                <label for="song-artist">
+                  Artist
+                  <input placeholder="The artist(s) behind the song" type="text" name="song-artist" id="song-artist">
+                </label>
+                <label for="song-year">
+                  Year
+                  <input placeholder="And the year of its creation" type="number" name="song-year" id="song-year">
+                </label>
+                <label for="song-album">
+                  Album
+                  <input placeholder="Was it on an album?" type="text" name="song-album" id="song-album">
+                </label>
+                <label for="song-starred">
+                  Starred
+                  <input type="checkbox" name="song-starred" id="song-starred">
+                </label>
+              </div>
+              <div class="form-wrapper__input-wrapper">
+                <label for="song-image">
+                  Image
+                  <input placeholder="The URL of the image" type="text" name="song-image" id="song-image">
+                </label>
+                <label for="song-sources">
+                  Sources
+                  <label for="sources-mp3">
+                    MP3
+                    <input placeholder="Where is the MP3 file?" type="text" name="sources-mp3" id="sources-mp3">
+                  </label>
+                  <label for="sources-wav">
+                    WAV
+                    <input placeholder="What about the WAV?" type="text" name="sources-wav" id="sources-wav">
+                  </label>
+                  <label for="sources-ogg">
+                    OGG
+                    <input placeholder="And the OGG of the freedom?" type="text" name="sources-ogg" id="sources-ogg">
+                  </label>
+                </label>
+              </div>
+            </div>
+            <div>
+              <input type="button" value="reset"/>
+              <input type="submit" value="Save"/>
+            </div>
+          </form>
+        </section>
+        <section class="tabs__tab songs-container__wrapper songs-container__available-songs">
           <h3 class="songs-container__title">Available songs</h3>
           <div class="songs-container__songs-wrapper">
           </div>
         </section>
-        <section class="songs-container__wrapper songs-container__playlist">
-          <h3 class="songs-container__title songs-container__available-title">
-            Playlist
-          </h3>
-          <div class="songs-container__songs-wrapper">
-          </div>
-        </section>
+      </div>
+      <section class="songs-container__wrapper songs-container__playlist">
+        <h3 class="songs-container__title songs-container__available-title">
+          Playlist
+        </h3>
+        <div class="songs-container__songs-wrapper">
+        </div>
       </section>
-      <div class="audio-player">
-        <header class="audio-player__header">
-          <button class="prev"></button>
-          <button class="play"></button>
-          <!--   <button class="pause"></button> -->
-          <button class="next"></button>
-        </header>
-        <div class="audio-player__middle">
-          <div class="song">
-            <div class="song__music-note"></div>
-            <h3 class="song__title">Default title</h3>
-          </div>
-          <button class="star"></button>
+    </section>
+    <div class="audio-player">
+      <header class="audio-player__header">
+        <button class="prev"></button>
+        <button class="play"></button>
+        <!--   <button class="pause"></button> -->
+        <button class="next"></button>
+      </header>
+      <div class="audio-player__middle">
+        <div class="song">
+          <div class="song__music-note"></div>
+          <h3 class="song__title">Default title</h3>
         </div>
-        <div class="audio-timeline">
-          <i class="audio-timeline__current">00:00</i>
-          <i class="audio-timeline__final">--:--</i>
-        </div>
-        <div class="audio-bar">
-          <button class="audio-bar__loader"></button>
-        </div>
+        <button class="star"></button>
+      </div>
+      <div class="audio-timeline">
+        <i class="audio-timeline__current">00:00</i>
+        <i class="audio-timeline__final">--:--</i>
+      </div>
+      <div class="audio-bar">
+        <button class="audio-bar__loader"></button>
       </div>
     </div>
-    <script src="js/quicker.js"></script>
-    <script src="js/singleton-songs.js"></script>
-    <script src="js/audio-player.js"></script>
-    <script src="js/get-initial-songs.js"></script>
-  </body>
+  </div>
+
+  <script src="js/global-vars.js"></script>
+  <script src="js/quicker.js"></script>
+  <script src="js/singleton-songs.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/get-initial-songs.js"></script>
+</body>
+
 </html>

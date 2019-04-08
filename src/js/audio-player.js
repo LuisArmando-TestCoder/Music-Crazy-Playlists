@@ -1,10 +1,4 @@
-/**
- * Valuable resources
- * // eslint-disable-line
- */
-
-function init(singleton) {
-  // eslint-disable-line
+function init() {
   const buttons = {
     playElemStyle: {
       '-webkit-clip-path': 'polygon(0% 0%, 0% 100%, 100% 50%)',
@@ -29,19 +23,19 @@ function init(singleton) {
   let playBool = true;
 
   function reactToAudioPlayer() {
-    if (singleton.playlist.length) {
-      let indexSource = singleton.playlist[songIndex].sources.mp3;
+    if (singletonSongs.playlist.length) {
+      let indexSource = singletonSongs.playlist[songIndex].sources.mp3;
       if (playBool) {
-        quicker().styleElems([playButton], buttons.pauseElemStyle); // eslint-disable-line
+        quicker().styleElems([playButton], buttons.pauseElemStyle);
         background.style.setProperty(
           'background-image',
-          `url(${singleton.playlist[songIndex].image})`,
+          `url(${singletonSongs.playlist[songIndex].image})`,
         );
-        songTitle.innerText = singleton.playlist[songIndex].title;
+        songTitle.innerText = singletonSongs.playlist[songIndex].title;
         if (audio.src !== indexSource) audio.src = indexSource;
         audio.play();
       } else {
-        quicker().styleElems([playButton], buttons.playElemStyle); // eslint-disable-line
+        quicker().styleElems([playButton], buttons.playElemStyle);
         audio.pause();
       }
       playBool = !playBool;
@@ -60,18 +54,17 @@ function init(singleton) {
       durationMark.innerText = quicker().numberToTime(audio.duration);
     }
 
-
     audio.addEventListener('timeupdate', mark);
   }
 
   function songEnded() {
     songIndex += 1;
-    if (songIndex > singleton.playlist.length - 1) songIndex = 0;
-    audio.src = singleton.playlist[songIndex].sources.mp3;
+    if (songIndex > singletonSongs.playlist.length - 1) songIndex = 0;
+    audio.src = singletonSongs.playlist[songIndex].sources.mp3;
     audio.play();
     background.style.setProperty(
       'background-image',
-      `url(${singleton.playlist[songIndex].image})`,
+      `url(${singletonSongs.playlist[songIndex].image})`,
     );
   }
 
@@ -80,18 +73,19 @@ function init(singleton) {
   setTimeline(audio);
 
   audio.addEventListener('ended', songEnded);
+
   playButton.addEventListener('click', reactToAudioPlayer);
 
   prev.addEventListener('click', () => {
     songIndex -= 1;
     playBool = true;
-    if (songIndex < 0) songIndex = singleton.playlist.length - 1;
+    if (songIndex < 0) songIndex = singletonSongs.playlist.length - 1;
     reactToAudioPlayer();
   });
   next.addEventListener('click', () => {
     songIndex += 1;
     playBool = true;
-    if (songIndex > singleton.playlist.length - 1) songIndex = 0;
+    if (songIndex > singletonSongs.playlist.length - 1) songIndex = 0;
     reactToAudioPlayer();
   });
 }

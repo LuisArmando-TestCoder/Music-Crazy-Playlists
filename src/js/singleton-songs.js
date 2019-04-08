@@ -11,7 +11,7 @@ const SongsArray = (function() {
       this.availableSongs = this.initialSongsData;
       this.playButton = true;
 
-      return instance ? instance : (instance = this); // eslint-disable-line
+      return instance ? instance : (instance = this);
     }
 
     updateAvailableSongs(parent) {
@@ -44,7 +44,7 @@ const SongsArray = (function() {
         ]);
       });
 
-      init(this); // eslint-disable-line
+      init(this);
     }
 
     composeArray(wrapper, array) {

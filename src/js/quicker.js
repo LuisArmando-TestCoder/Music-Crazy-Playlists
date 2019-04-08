@@ -1,9 +1,4 @@
-/**
- * Valuable resources
- * // eslint-disable-line
- */
-
-function quicker() { // eslint-disable-line
+function quicker() {
 
   const fetchJSON = async (url, func) => {
     const r = await fetch(url)
@@ -37,7 +32,7 @@ function quicker() { // eslint-disable-line
       _parent.appendChild(currentElement);
       if (i.inner) currentElement.innerHTML += i.inner;
       if (i.attr) {
-        for (let a in i.attr) { // eslint-disable-line
+        for (let a in i.attr) {
           currentElement.setAttribute(a, i.attr[a]);
         }
       }
@@ -87,7 +82,7 @@ function quicker() { // eslint-disable-line
 
   function styleElems(elems, rule) {
     elems.forEach((elem) => {
-      for (let property in rule) { // eslint-disable-line
+      for (let property in rule) {
         elem.style.setProperty(property, rule[property]);
       }
     });
@@ -144,23 +139,23 @@ function quicker() { // eslint-disable-line
     let minutes = Math.floor((num - (hours * 3600)) / 60);
     let seconds = (num - (hours * 3600) - (minutes * 60)).toFixed(0);
 
-    if (hours < 10) hours = `0${hours}`;
-    if (minutes < 10) minutes = `0${minutes}`;
-    if (seconds < 10) seconds = `0${seconds}`;
+    if (hours <= 9) hours = `0${hours}`;
+    if (minutes <= 9) minutes = `0${minutes}`;
+    if (seconds <= 9) seconds = `0${seconds}`;
 
     if (!isNaN(num)) return `${parseInt(hours, 10) ? `${hours}:` : ''}${minutes}:${seconds}`;
     return '--:--';
   }
 
   return {
-    numberToTime: numberToTime, // eslint-disable-line
-    showFrameRate: showFrameRate, // eslint-disable-line
-    styleElems: styleElems, // eslint-disable-line
-    appendChildren: appendChildren, // eslint-disable-line
-    analyseAudio: analyseAudio, // eslint-disable-line
-    createElementsFromArray: createElementsFromArray, // eslint-disable-line
-    canvasManageSize: canvasManageSize, // eslint-disable-line
-    createElementWithNS: createElementWithNS, // eslint-disable-line
-    fetchJSON: fetchJSON, // eslint-disable-line
+    numberToTime: numberToTime,
+    showFrameRate: showFrameRate,
+    styleElems: styleElems,
+    appendChildren: appendChildren,
+    analyseAudio: analyseAudio,
+    createElementsFromArray: createElementsFromArray,
+    canvasManageSize: canvasManageSize,
+    createElementWithNS: createElementWithNS,
+    fetchJSON: fetchJSON,
   };
 }
