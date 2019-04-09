@@ -4,9 +4,15 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  font-family: 'Fredoka One', cursive;
+}
+
+div, section {
+  font-family: 'Fredoka One', cursive;
 }
 
 button {
+  font-family: 'Fredoka One', cursive;
   mix-blend-mode: difference;
   display: block;
   background: var(--white);

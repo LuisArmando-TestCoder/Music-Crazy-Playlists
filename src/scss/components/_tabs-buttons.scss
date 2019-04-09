@@ -1,0 +1,34 @@
+.tabs-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+}
+
+.tabs-buttons__button-tab {
+  width: 100%;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0;
+  background: transparent;
+  font-size: 20px;
+}
+
+.tabs-buttons__button-tab[highlight='true'] {
+  background: #ff0000aa;
+  color: var(--black);
+}
+
+.tabs-buttons__button-tab:hover {
+  color: var(--white);
+  background: var(--accent-color);
+}
+
+
+.songs-container__tabs {
+  position: relative;
+}
+
+.tabs__tab {
+  position: absolute;
+  margin: auto;
+}

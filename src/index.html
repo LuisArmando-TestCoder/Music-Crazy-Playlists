@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
   <title>Audio Music Player</title>
 </head>
 
@@ -19,76 +20,73 @@
         Import
       </button>
     </div>
-    <section class="songs-container">
-      <div class="songs-container__tabs">
-        <section class="tabs__tab">
-          <h2>Submit a song</h2>
-          <form>
-            <div class="form-wrapper">
-              <div class="form-wrapper__input-wrapper">
-                <label for="song-name">
-                  Name
-                  <input placeholder="The name of the song goes here" type="text" name="song-name" id="song-name">
-                </label>
-                <label for="song-artist">
-                  Artist
-                  <input placeholder="The artist(s) behind the song" type="text" name="song-artist" id="song-artist">
-                </label>
-                <label for="song-year">
-                  Year
-                  <input placeholder="And the year of its creation" type="number" name="song-year" id="song-year">
-                </label>
-                <label for="song-album">
-                  Album
-                  <input placeholder="Was it on an album?" type="text" name="song-album" id="song-album">
-                </label>
-                <label for="song-starred">
-                  Starred
-                  <input type="checkbox" name="song-starred" id="song-starred">
-                </label>
-              </div>
-              <div class="form-wrapper__input-wrapper">
-                <label for="song-image">
-                  Image
-                  <input placeholder="The URL of the image" type="text" name="song-image" id="song-image">
-                </label>
-                <label for="song-sources">
-                  Sources
-                  <label for="sources-mp3">
-                    MP3
-                    <input placeholder="Where is the MP3 file?" type="text" name="sources-mp3" id="sources-mp3">
-                  </label>
-                  <label for="sources-wav">
-                    WAV
-                    <input placeholder="What about the WAV?" type="text" name="sources-wav" id="sources-wav">
-                  </label>
-                  <label for="sources-ogg">
-                    OGG
-                    <input placeholder="And the OGG of the freedom?" type="text" name="sources-ogg" id="sources-ogg">
-                  </label>
-                </label>
-              </div>
-            </div>
-            <div>
-              <input type="button" value="reset"/>
-              <input type="submit" value="Save"/>
-            </div>
-          </form>
-        </section>
-        <section class="tabs__tab songs-container__wrapper songs-container__available-songs">
+    <div class="tabs">
+      <section class="tabs__tab songs-container">
+        <section class="songs-container__wrapper songs-container__available-songs">
           <h3 class="songs-container__title">Available songs</h3>
           <div class="songs-container__songs-wrapper">
           </div>
         </section>
-      </div>
-      <section class="songs-container__wrapper songs-container__playlist">
-        <h3 class="songs-container__title songs-container__available-title">
-          Playlist
-        </h3>
-        <div class="songs-container__songs-wrapper">
-        </div>
+        <section class="songs-container__wrapper songs-container__playlist">
+          <h3 class="songs-container__title songs-container__available-title">
+            Playlist
+          </h3>
+          <div class="songs-container__songs-wrapper">
+          </div>
+        </section>
       </section>
-    </section>
+      <section class="tabs__tab form-container">
+        <form>
+          <div class="form-wrapper">
+            <div class="form-wrapper__input-wrapper">
+              <label class="input-wrapper__label" for="song-name">
+                Name
+                <input placeholder="The name of the song goes here" type="text" name="song-name" id="song-name">
+              </label>
+              <label class="input-wrapper__label" for="song-artist">
+                Artist
+                <input placeholder="The artist(s) behind the song" type="text" name="song-artist" id="song-artist">
+              </label>
+              <label class="input-wrapper__label" for="song-year">
+                Year
+                <input placeholder="And the year of its creation" type="number" name="song-year" id="song-year">
+              </label>
+              <label class="input-wrapper__label" for="song-album">
+                Album
+                <input placeholder="Was it on an album?" type="text" name="song-album" id="song-album">
+              </label>
+              <label class="switch input-wrapper__label" for="song-starred">
+                Starred
+                <input class="switch__input" type="checkbox" name="song-starred" id="song-starred">
+                <span class="switch__switch"></span>
+              </label>
+            </div>
+            <div class="form-wrapper__input-wrapper">
+              <label class="input-wrapper__label" for="song-image">
+                Image
+                <input placeholder="The URL of the image" type="text" name="song-image" id="song-image">
+              </label>
+              <label class="input-wrapper__label" for="sources-mp3">
+                MP3
+                <input placeholder="Where is the MP3 file?" type="text" name="sources-mp3" id="sources-mp3">
+              </label>
+              <label class="input-wrapper__label" for="sources-wav">
+                WAV
+                <input placeholder="What about the WAV?" type="text" name="sources-wav" id="sources-wav">
+              </label>
+              <label class="input-wrapper__label" for="sources-ogg">
+                OGG
+                <input placeholder="And the OGG of the freedom?" type="text" name="sources-ogg" id="sources-ogg">
+              </label>
+            </div>
+          </div>
+          <div>
+            <input type="button" value="reset" />
+            <input type="submit" value="Save" />
+          </div>
+        </form>
+      </section>
+    </div>
     <div class="audio-player">
       <header class="audio-player__header">
         <button class="prev"></button>

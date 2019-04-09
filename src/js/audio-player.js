@@ -18,9 +18,34 @@ function init() {
   const songTitle = document.querySelector('.song__title');
   const prev = document.querySelector('.prev');
   const next = document.querySelector('.next');
+  const tabBtns = document.querySelectorAll('.tabs-buttons button');
+  const tabs = document.getElementsByClassName('tabs__tab');
 
   let songIndex = 0;
   let playBool = true;
+
+  function manage(tabButtons, tabs) {
+    function resetTabs() {
+      tabButtons.forEach((tabButton, i) => {
+        tabButton.setAttribute('highlight', false);
+        tabs[i].style.visibility = 'hidden';
+      });
+    }
+    return {
+      tabs(defaultIndex) {
+        resetTabs();
+        tabButtons[defaultIndex || '0'].setAttribute('highlight', true);
+        tabs[defaultIndex || '0'].style.visibility = 'visible';
+        for (let i = 0; i < tabButtons.length; i += 1) {
+          tabButtons[i].addEventListener('click', () => {
+            resetTabs();
+            tabButtons[i].setAttribute('highlight', true);
+            tabs[i].style.visibility = 'visible';
+          });
+        }
+      },
+    };
+  }
 
   function reactToAudioPlayer() {
     if (singletonSongs.playlist.length) {
@@ -71,6 +96,8 @@ function init() {
   audio.crossOrigin = 'anonymous';
 
   setTimeline(audio);
+
+  manage(tabBtns, tabs).tabs(0);
 
   audio.addEventListener('ended', songEnded);
 

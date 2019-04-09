@@ -6,14 +6,6 @@
   grid-gap: 50px;
 }
 
-.songs-container__tabs {
-  position: relative;
-}
-
-.tabs__tab {
-  position: absolute;
-}
-
 .songs-container__wrapper {
   border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -27,15 +19,13 @@
 }
 
 .songs-container__songs-wrapper {
-  min-height: 240px;
+  min-height: 320px;
 }
 
 .songs-container__title {
   color: var(--white);
   background: #ff0000aa;
   padding: 30px;
-  position: sticky;
-  top: 0;
 }
 .songs-container__available-title {
   color: var(--black);
@@ -84,6 +74,7 @@
   height: 17px;
   overflow: hidden;
 }
+
 .songs-container__playlist .play-song__title::after {
   content: ' in playlist';
   text-transform: lowercase;
