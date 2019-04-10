@@ -14,7 +14,7 @@
   -o-border-radius: 2px;
   padding: 25px;
   min-height: 40vh;
-  max-height: 480px;
+  max-height: 440px;
   overflow: auto;
 }
 
@@ -25,7 +25,7 @@
 .songs-container__title {
   color: var(--white);
   background: #ff0000aa;
-  padding: 30px;
+  padding: 5px 30px;
 }
 .songs-container__available-title {
   color: var(--black);

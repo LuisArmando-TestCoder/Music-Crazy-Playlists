@@ -38,6 +38,11 @@ button:hover {
   cursor: pointer;
 }
 
+*[disabled] {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+
 .audio-player {
   position: fixed;
   left: 0;
@@ -94,6 +99,7 @@ button:hover {
   background: var(--white);
   height: 5px;
   margin: 5px 0;
+  cursor: pointer;
   position: relative;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -227,7 +233,7 @@ button:hover {
   -o-border-radius: 2px;
   padding: 25px;
   min-height: 40vh;
-  max-height: 480px;
+  max-height: 440px;
   overflow: auto;
 }
 
@@ -238,7 +244,7 @@ button:hover {
 .songs-container__title {
   color: var(--white);
   background: #ff0000aa;
-  padding: 30px;
+  padding: 5px 30px;
 }
 
 .songs-container__available-title {
@@ -317,9 +323,10 @@ button:hover {
 
 .tabs-buttons__button-tab {
   width: 100%;
+  height: auto;
   text-transform: uppercase;
   font-weight: bold;
-  padding: 0;
+  padding: 15px;
   background: transparent;
   font-size: 20px;
 }
@@ -344,12 +351,32 @@ button:hover {
 }
 
 .form-wrapper {
-  padding: 75px 25px;
+  padding: 25px;
   margin: 25px 0;
   display: grid;
   place-content: center;
   grid-template-columns: repeat(2, 50%);
   background: #ffffffaa;
+}
+
+.form-wrapper__button {
+  border: 0;
+  padding: 10px 50px;
+  color: var(--white);
+  font-size: 20px;
+  float: left;
+  text-transform: uppercase;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+  background: #ff0000aa;
+}
+
+.form-wrapper__button:hover {
+  background: var(--accent-color);
+  cursor: pointer;
 }
 
 .form-wrapper__input-wrapper {
@@ -370,11 +397,24 @@ button:hover {
   font-family: "Fredoka One", cursive;
   color: var(--white);
   text-overflow: ellipsis;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
 }
 
 .input-wrapper__label input::placeholder {
   font-family: "Fredoka One", cursive;
   color: #f0f0f0;
+}
+
+.input-wrapper__label input:focus {
+  background: #ffffffaa;
+  color: var(--black);
+}
+.input-wrapper__label input:focus::placeholder {
+  color: var(--accent-color);
 }
 
 .switch {
@@ -401,13 +441,13 @@ button:hover {
   border-radius: 17.5px;
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: -2px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: var(--black);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   -webkit-border-radius: 17.5px;
   -moz-border-radius: 17.5px;
   -ms-border-radius: 17.5px;
@@ -423,8 +463,8 @@ button:hover {
   left: 3px;
   bottom: 3px;
   background-color: var(--white);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 input:checked + .switch__switch {
@@ -447,7 +487,7 @@ input:checked + .switch__switch:before {
 
 .tabs__tab {
   position: absolute;
-  width: 90%;
+  width: 80%;
   margin: auto;
   left: 0;
   right: 0;

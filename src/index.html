@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Bug double audio when there is just one audio -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,52 +37,52 @@
       </section>
       <section class="tabs__tab form-container">
         <form>
-          <div class="form-wrapper">
+          <div class="form-wrapper" id="form-manager">
             <div class="form-wrapper__input-wrapper">
-              <label class="input-wrapper__label" for="song-name">
-                Name
-                <input placeholder="The name of the song goes here" type="text" name="song-name" id="song-name">
+              <label class="input-wrapper__label" for="song-title">
+                Title
+                <input placeholder="The title of the song goes here" type="text" name="name" id="song-title">
               </label>
               <label class="input-wrapper__label" for="song-artist">
                 Artist
-                <input placeholder="The artist(s) behind the song" type="text" name="song-artist" id="song-artist">
+                <input placeholder="The artist(s) behind the song" type="text" name="artist" id="song-artist">
               </label>
               <label class="input-wrapper__label" for="song-year">
                 Year
-                <input placeholder="And the year of its creation" type="number" name="song-year" id="song-year">
+                <input placeholder="And the year of its creation" type="number" name="year" id="song-year">
               </label>
               <label class="input-wrapper__label" for="song-album">
                 Album
-                <input placeholder="Was it on an album?" type="text" name="song-album" id="song-album">
+                <input placeholder="Was it on an album?" type="text" name="album" id="song-album">
               </label>
               <label class="switch input-wrapper__label" for="song-starred">
                 Starred
-                <input class="switch__input" type="checkbox" name="song-starred" id="song-starred">
+                <input class="switch__input" type="checkbox" name="starred" id="song-starred">
                 <span class="switch__switch"></span>
               </label>
             </div>
             <div class="form-wrapper__input-wrapper">
               <label class="input-wrapper__label" for="song-image">
                 Image
-                <input placeholder="The URL of the image" type="text" name="song-image" id="song-image">
+                <input placeholder="The URL of the image" type="text" name="image" id="song-image">
               </label>
               <label class="input-wrapper__label" for="sources-mp3">
                 MP3
-                <input placeholder="Where is the MP3 file?" type="text" name="sources-mp3" id="sources-mp3">
+                <input placeholder="Where is the MP3 file?" type="text" name="mp3" id="sources-mp3">
               </label>
               <label class="input-wrapper__label" for="sources-wav">
                 WAV
-                <input placeholder="What about the WAV?" type="text" name="sources-wav" id="sources-wav">
+                <input placeholder="What about the WAV?" type="text" name="wav" id="sources-wav">
               </label>
               <label class="input-wrapper__label" for="sources-ogg">
                 OGG
-                <input placeholder="And the OGG of the freedom?" type="text" name="sources-ogg" id="sources-ogg">
+                <input placeholder="And the OGG of the freedom?" type="text" name="ogg" id="sources-ogg">
               </label>
             </div>
           </div>
           <div>
-            <input type="button" value="reset" />
-            <input type="submit" value="Save" />
+            <input id="song-reset" class="form-wrapper__button" type="reset" value="Clear" />
+            <input id="song-submit" class="form-wrapper__button" type="submit" value="Save" />
           </div>
         </form>
       </section>
@@ -109,13 +109,15 @@
         <button class="audio-bar__loader"></button>
       </div>
     </div>
+    
   </div>
 
   <script src="js/global-vars.js"></script>
-  <script src="js/quicker.js"></script>
+  <script src="js/utilitary.js"></script>
   <script src="js/singleton-songs.js"></script>
   <script src="js/audio-player.js"></script>
   <script src="js/get-initial-songs.js"></script>
+  <script src="js/form-manager.js"></script>
 </body>
 
 </html>

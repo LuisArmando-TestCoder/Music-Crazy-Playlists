@@ -7,24 +7,6 @@ function quicker() {
     func(r);
   };
 
-  function createElementWithNS(elem) {
-    const theElem = document.createElementNS('http://www.w3.org/2000/svg', elem);
-    if (elem.toLowerCase() === 'svg') {
-      theElem.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-    }
-    return theElem;
-  }
-
-  function canvasManageSize(canvas) {
-    const c = canvas;
-    function setSize() {
-      c.width = window.innerWidth;
-      c.height = window.innerHeight;
-    }
-    setSize();
-    window.addEventListener('resize', setSize);
-  }
-
   function createElementsFromArray(_parent = document.querySelector('body'), _array) {
     // createElementsFromArray stands for putArrayInElement
     for (const i of _array) {
@@ -133,7 +115,6 @@ function quicker() {
     document.body.appendChild(parent);
   }
 
-
   function numberToTime(num) {
     let hours = Math.floor(num / 3600);
     let minutes = Math.floor((num - (hours * 3600)) / 60);
@@ -147,15 +128,46 @@ function quicker() {
     return '--:--';
   }
 
+  function manage(tabButtons, tabs) {
+    function resetTabs() {
+      tabButtons.forEach((tabButton, i) => {
+        tabButton.setAttribute('highlight', false);
+        tabs[i].style.opacity = '0';
+        tabs[i].style.visibility = 'hidden';
+      });
+    }
+    return {
+      tabs(defaultIndex) {
+        resetTabs();
+        tabButtons[defaultIndex || '0'].setAttribute('highlight', true);
+        tabs[defaultIndex || '0'].style.opacity = '1';
+        tabs[defaultIndex || '0'].style.visibility = 'visible';
+        for (let i = 0; i < tabButtons.length; i += 1) {
+          tabButtons[i].addEventListener('click', () => {
+            resetTabs();
+            tabButtons[i].setAttribute('highlight', true);
+            tabs[i].style.opacity = '1';
+            tabs[i].style.visibility = 'visible';
+          });
+        }
+      },
+    };
+  }
+
+  function keepArrayToLocalStorage(key, array) {
+    localStorage.setItem(key, JSON.stringify(array)); //////////////////////////////////////////////
+    // find out the stringify
+  }
+
   return {
+    keepArrayToLocalStorage: keepArrayToLocalStorage,
+    manage: manage,
     numberToTime: numberToTime,
     showFrameRate: showFrameRate,
     styleElems: styleElems,
     appendChildren: appendChildren,
     analyseAudio: analyseAudio,
     createElementsFromArray: createElementsFromArray,
-    canvasManageSize: canvasManageSize,
-    createElementWithNS: createElementWithNS,
     fetchJSON: fetchJSON,
   };
 }

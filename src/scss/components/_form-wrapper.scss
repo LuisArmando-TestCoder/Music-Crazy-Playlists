@@ -1,10 +1,30 @@
 .form-wrapper {
-  padding: 75px 25px;
+  padding: 25px;
   margin: 25px 0;
   display: grid;
   place-content: center;
   grid-template-columns: repeat(2, 50%);
   background: #ffffffaa;
+}
+
+.form-wrapper__button {
+  border: 0;
+  padding: 10px 50px;
+  color: var(--white);
+  font-size: 20px;
+  float: left;
+  text-transform: uppercase;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+  background: #ff0000aa;
+}
+
+.form-wrapper__button:hover {
+  background: var(--accent-color);
+  cursor: pointer;
 }
 
 .form-wrapper__input-wrapper {
@@ -26,11 +46,24 @@
   font-family: 'Fredoka One', cursive;
   color: var(--white);
   text-overflow: ellipsis;
+  transition: 0.25s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
 }
 
 .input-wrapper__label input::placeholder {
   font-family: 'Fredoka One', cursive;
   color: #f0f0f0;
+}
+
+.input-wrapper__label input:focus {
+  background: #ffffffaa;
+  color: var(--black);
+  &::placeholder {
+    color: var(--accent-color);
+  }
 }
 
 .switch {
@@ -57,13 +90,13 @@
   border-radius: 17.5px;
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: -2px;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: var(--black);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
   -webkit-border-radius: 17.5px;
   -moz-border-radius: 17.5px;
   -ms-border-radius: 17.5px;
@@ -79,8 +112,8 @@
   left: 3px;
   bottom: 3px;
   background-color: var(--white);
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
 }
 
 input:checked + .switch__switch {

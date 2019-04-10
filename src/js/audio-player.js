@@ -18,33 +18,16 @@ function init() {
   const songTitle = document.querySelector('.song__title');
   const prev = document.querySelector('.prev');
   const next = document.querySelector('.next');
-  const tabBtns = document.querySelectorAll('.tabs-buttons button');
-  const tabs = document.getElementsByClassName('tabs__tab');
+  const audioBar = document.querySelector('.audio-bar');
 
   let songIndex = 0;
   let playBool = true;
 
-  function manage(tabButtons, tabs) {
-    function resetTabs() {
-      tabButtons.forEach((tabButton, i) => {
-        tabButton.setAttribute('highlight', false);
-        tabs[i].style.visibility = 'hidden';
-      });
-    }
-    return {
-      tabs(defaultIndex) {
-        resetTabs();
-        tabButtons[defaultIndex || '0'].setAttribute('highlight', true);
-        tabs[defaultIndex || '0'].style.visibility = 'visible';
-        for (let i = 0; i < tabButtons.length; i += 1) {
-          tabButtons[i].addEventListener('click', () => {
-            resetTabs();
-            tabButtons[i].setAttribute('highlight', true);
-            tabs[i].style.visibility = 'visible';
-          });
-        }
-      },
-    };
+  function changeTime(e) {
+    const x = e.clientX; // mouse pos when clicked
+    const width = audioBar.clientWidth + 135; // width of audioBar
+    const newTime = audio.duration / (width / x);
+    audio.currentTime = newTime;
   }
 
   function reactToAudioPlayer() {
@@ -58,7 +41,7 @@ function init() {
         );
         songTitle.innerText = singletonSongs.playlist[songIndex].title;
         if (audio.src !== indexSource) audio.src = indexSource;
-        audio.play();
+        audio.play(); // ----------------------------------------------- seek 4 bug
       } else {
         quicker().styleElems([playButton], buttons.playElemStyle);
         audio.pause();
@@ -86,7 +69,7 @@ function init() {
     songIndex += 1;
     if (songIndex > singletonSongs.playlist.length - 1) songIndex = 0;
     audio.src = singletonSongs.playlist[songIndex].sources.mp3;
-    audio.play();
+    audio.play(); // ----------------------------------------------- seek 4 bug
     background.style.setProperty(
       'background-image',
       `url(${singletonSongs.playlist[songIndex].image})`,
@@ -97,7 +80,9 @@ function init() {
 
   setTimeline(audio);
 
-  manage(tabBtns, tabs).tabs(0);
+  quicker().manage(tabBtns, tabs).tabs(0);
+
+  audioBar.addEventListener('click', changeTime);
 
   audio.addEventListener('ended', songEnded);
 

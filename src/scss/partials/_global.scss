@@ -29,3 +29,8 @@ button:hover {
   background: var(--accent-color);
   cursor: pointer;
 }
+
+*[disabled] {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}

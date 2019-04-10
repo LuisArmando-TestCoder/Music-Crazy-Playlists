@@ -1,21 +1,20 @@
 const SongsArray = (function() {
   let instance = null;
   return class Singleton {
-    constructor(initialSongsData) {
-      const localSongs = localStorage.getItem(`songsArray`);
+    constructor(availableSongs) {
+      const localSongs = localStorage.getItem('songsArray');
 
-      if (localSongs) this.initialSongsData = JSON.parse(localSongs);
-      else if (initialSongsData.length) this.initialSongsData = initialSongsData;
-      else this.initialSongsData = [];
+      if (localSongs) this.availableSongs = JSON.parse(localSongs);
+      else if (availableSongs.length) this.availableSongs = availableSongs;
+      else this.availableSongs = [];
       this.playlist = [];
-      this.availableSongs = this.initialSongsData;
       this.playButton = true;
 
-      return instance ? instance : (instance = this);
+      return instance ? instance : instance = this;
     }
 
     updateAvailableSongs(parent) {
-      this.initialSongsData.forEach((obj) => {
+      this.availableSongs.forEach((obj) => {
         quicker().createElementsFromArray(parent, [
           {
             name: 'div',
