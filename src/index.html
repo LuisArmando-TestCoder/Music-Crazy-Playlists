@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Bug double audio when there is just one audio -->
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +38,7 @@
       </section>
       <section class="tabs__tab form-container">
         <form>
-          <div class="form-wrapper" id="form-manager">
+          <div class="form-wrapper">
             <div class="form-wrapper__input-wrapper">
               <label class="input-wrapper__label" for="song-title">
                 Title
@@ -109,7 +110,100 @@
         <button class="audio-bar__loader"></button>
       </div>
     </div>
-    
+    <div class="modals">
+      <div unavailable class="modals__modal">
+        <form>
+          <div class="form-wrapper">
+            <div class="form-wrapper__input-wrapper">
+              <label class="input-wrapper__label" for="modal-title">
+                Title
+                <input placeholder="The title of the song goes here" type="text" name="name" id="modal-title">
+              </label>
+              <label class="input-wrapper__label" for="modal-artist">
+                Artist
+                <input placeholder="The artist(s) behind the song" type="text" name="artist" id="modal-artist">
+              </label>
+              <label class="input-wrapper__label" for="modal-year">
+                Year
+                <input placeholder="And the year of its creation" type="number" name="year" id="modal-year">
+              </label>
+              <label class="input-wrapper__label" for="modal-album">
+                Album
+                <input placeholder="Was it on an album?" type="text" name="album" id="modal-album">
+              </label>
+              <label class="switch input-wrapper__label" for="modal-starred">
+                Starred
+                <input class="switch__input" type="checkbox" name="starred" id="modal-starred">
+                <span class="switch__switch"></span>
+              </label>
+            </div>
+            <div class="form-wrapper__input-wrapper">
+              <label class="input-wrapper__label" for="modal-image">
+                Image
+                <input placeholder="The URL of the image" type="text" name="image" id="modal-image">
+              </label>
+              <label class="input-wrapper__label" for="modal-sources-mp3">
+                MP3
+                <input placeholder="Where is the MP3 file?" type="text" name="mp3" id="modal-sources-mp3">
+              </label>
+              <label class="input-wrapper__label" for="modal-sources-wav">
+                WAV
+                <input placeholder="What about the WAV?" type="text" name="wav" id="modal-sources-wav">
+              </label>
+              <label class="input-wrapper__label" for="modal-sources-ogg">
+                OGG
+                <input placeholder="And the OGG of the freedom?" type="text" name="ogg" id="modal-sources-ogg">
+              </label>
+            </div>
+          </div>
+          <div>
+            <input id="modal-reset" class="form-wrapper__button" type="reset" value="Cancel" />
+            <input id="modal-submit" class="form-wrapper__button" type="submit" value="Save" />
+          </div>
+        </form>
+      </div>
+      <div unavailable class="modals__modal">
+        <div class="modal__wrapper">
+          <p>
+            Está seguro de eliminar la canción?
+          </p>
+          <div class="wrapper__button-wrapper">
+            <button class="button-wrapper__button" id="cancel-item">Cancel</button>
+            <button class="button-wrapper__button" id="erase-item">Erase</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div undisplay class="options">
+      <div class="options__wrapper">
+        <label class="wrapper__label" for="item-display">
+          🡰
+          <input type="checkbox" name="item-display" id="item-display">
+        </label>
+      </div>
+      <div class="options__wrapper">
+        <div class="wrapper__options">
+          <label for="item-sort">
+            Sort by
+            <select name="item-sort" id="item-sort">
+              <option value="name">Name</option>
+              <option value="album">Album</option>
+              <option value="starred">Starred</option>
+              <option value="artist">Artist</option>
+              <option value="year">Year</option>
+            </select>
+          </label>
+          <label for="item-search">
+            Search
+            <input type="text" name="item-search" id="item-search">
+          </label>
+        </div>
+        <div class="wrapper__wrapper-buttons">
+          <button id="item-edit">Edit</button>
+          <button id="item-delete">Delete</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="js/global-vars.js"></script>
@@ -118,6 +212,7 @@
   <script src="js/audio-player.js"></script>
   <script src="js/get-initial-songs.js"></script>
   <script src="js/form-manager.js"></script>
+  <script src="js/options-displayer.js"></script>
 </body>
 
 </html>

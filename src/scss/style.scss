@@ -1,8 +1,12 @@
 @import './helpers/variables';
+
 @import './partials/global';
+
 @import './components/audio-player';
 @import './components/songs-container';
 @import './components/thumb-bar';
 @import './components/tabs-buttons';
 @import './components/form-wrapper';
 @import './components/tabs';
+@import './components/modals';
+@import './components/options-displayer';

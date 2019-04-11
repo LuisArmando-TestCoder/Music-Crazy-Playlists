@@ -1,0 +1,55 @@
+.options {
+  z-index: 2;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 25px;
+  display: grid;
+  transition: 0.5s;
+  width: 200px;
+  box-shadow: 0 0 100vw #333;
+}
+
+.options__wrapper label {
+  display: grid;
+  grid-gap: 5px;
+  margin: 15px 0px;
+}
+
+#item-display {
+  display: none;
+  position: absolute;
+}
+
+.wrapper__label {
+  background: #fff;
+  position: absolute;
+  bottom: calc(50vh - 40px);
+  left: -40px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 0 50% 50% 0;
+  transform: rotate(180deg);
+}
+
+[undisplay] .wrapper__label {
+  border-radius: 50% 0 0 50%;
+  transform: rotate(0deg);
+}
+
+[undisplay] {
+  box-shadow: 0 0 0vw #333;
+  right: -250px;
+}
+
+.wrapper__wrapper-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wrapper__wrapper-buttons button{
+  width: auto;
+}

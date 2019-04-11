@@ -1,0 +1,43 @@
+.modals {
+  position: fixed;
+  height: 100vh;
+}
+
+.modals__modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #fff;
+  width: 100vw;
+}
+
+.modals__modal .form-wrapper, .modals__modal .modal__wrapper {
+  background: #000e;
+}
+
+.modal__wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 50px 200px;
+}
+
+.wrapper__button-wrapper {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.button-wrapper__button {
+  width: auto;
+}
+
+[unavailable] {
+  visibility: hidden;
+}
