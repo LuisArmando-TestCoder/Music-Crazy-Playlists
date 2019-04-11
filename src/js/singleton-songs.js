@@ -13,8 +13,9 @@ const SongsArray = (function() {
       return instance ? instance : instance = this;
     }
 
-    updateAvailableSongs(parent) {
-      this.availableSongs.forEach((obj) => {
+    updateLiSongs(parent, array) {
+      parent.innerHTML = '';
+      array.forEach((obj) => {
         quicker().createElementsFromArray(parent, [
           {
             name: 'div',

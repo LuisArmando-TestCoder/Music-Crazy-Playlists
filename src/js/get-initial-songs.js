@@ -1,7 +1,7 @@
 (function () {
   function getAudioSongs(data) {
     singletonSongs = new SongsArray(data);
-    singletonSongs.updateAvailableSongs(availableSongs);
+    singletonSongs.updateLiSongs(availableSongs, singletonSongs.availableSongs);
     singletonSongs.createDragDrop('class', 'songs-container__songs-wrapper');
   }
 

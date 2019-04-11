@@ -33,7 +33,7 @@
     }
     quicker().manage(tabBtns, tabs).tabs(0);
     singletonSongs.availableSongs.push(objValues);
-    singletonSongs.updateAvailableSongs(availableSongs);
+    singletonSongs.updateLiSongs(availableSongs, singletonSongs.availableSongs);
     singletonSongs.createDragDrop('class', 'songs-container__songs-wrapper');
     quicker().keepArrayToLocalStorage('songsArray', availableSongs);
   }
