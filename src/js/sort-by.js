@@ -20,8 +20,8 @@
     }
 
     const value = e.target.value;
-    const availableSongsArray = [].concat(singletonSongs.availableSongs);
-    const playlistArray = [].concat(singletonSongs.playlist);
+    let availableSongsArray = [].concat(singletonSongs.availableSongs);
+    let playlistArray = [].concat(singletonSongs.playlist);
     const sortsObj = {
       title(array) {
         sort(array, 'title');
@@ -30,7 +30,11 @@
         sort(array, 'album');
       },
       starred(array) {
-        // just filter
+        if (array == availableSongsArray) {
+          availableSongsArray = array.filter((a) => a.starred === 'true');
+        } else {
+          playlistArray = array.filter((a) => a.starred === 'true');
+        }
       },
       artist(array) {
         sort(array, 'artist');
@@ -45,11 +49,8 @@
     if (playlist.children.length)
       sortsObj[value](playlistArray);
 
-      console.log(availableSongsArray);
-      console.log(playlistArray);
-
-    singletonSongs.updateLiSongs(availableSongs, availableSongsArray);
-    singletonSongs.updateLiSongs(playlist, playlistArray);
+    quicker().updateLiSongs(availableSongs, availableSongsArray);
+    quicker().updateLiSongs(playlist, playlistArray);
   }
 
   itemSort.addEventListener('input', sortContainers);

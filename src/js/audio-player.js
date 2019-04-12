@@ -23,6 +23,15 @@ function init() {
   let songIndex = 0;
   let playBool = true;
 
+  function setDefaultImage() {
+    let coverImage = singletonSongs.playlist[songIndex].image;
+    if (coverImage) {
+      background.style.setProperty('background-image', `url(${coverImage})`);
+    } else {
+      background.style.setProperty('background-image', 'url("https://cdna.artstation.com/p/assets/images/images/015/875/250/large/ismail-inceoglu-base-17.jpg?1550004256")');
+    }
+  }
+
   function changeTime(e) {
     const x = e.clientX; // mouse pos when clicked
     const width = audioBar.clientWidth + 135; // width of audioBar
@@ -31,17 +40,15 @@ function init() {
   }
 
   function reactToAudioPlayer() {
+    audio.pause();
     if (singletonSongs.playlist.length) {
       let indexSource = singletonSongs.playlist[songIndex].sources.mp3;
       if (playBool) {
         quicker().styleElems([playButton], buttons.pauseElemStyle);
-        background.style.setProperty(
-          'background-image',
-          `url(${singletonSongs.playlist[songIndex].image})`,
-        );
         songTitle.innerText = singletonSongs.playlist[songIndex].title;
         if (audio.src !== indexSource) audio.src = indexSource;
         audio.play(); // ----------------------------------------------- seek 4 bug
+        setDefaultImage();
       } else {
         quicker().styleElems([playButton], buttons.playElemStyle);
         audio.pause();
@@ -67,13 +74,9 @@ function init() {
 
   function songEnded() {
     songIndex += 1;
+    playBool = true;
     if (songIndex > singletonSongs.playlist.length - 1) songIndex = 0;
-    audio.src = singletonSongs.playlist[songIndex].sources.mp3;
-    audio.play(); // ----------------------------------------------- seek 4 bug
-    background.style.setProperty(
-      'background-image',
-      `url(${singletonSongs.playlist[songIndex].image})`,
-    );
+    reactToAudioPlayer();
   }
 
   audio.crossOrigin = 'anonymous';
@@ -94,10 +97,5 @@ function init() {
     if (songIndex < 0) songIndex = singletonSongs.playlist.length - 1;
     reactToAudioPlayer();
   });
-  next.addEventListener('click', () => {
-    songIndex += 1;
-    playBool = true;
-    if (songIndex > singletonSongs.playlist.length - 1) songIndex = 0;
-    reactToAudioPlayer();
-  });
+  next.addEventListener('click', songEnded);
 }

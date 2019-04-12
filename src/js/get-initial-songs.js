@@ -1,8 +1,10 @@
 (function () {
   function getAudioSongs(data) {
     singletonSongs = new SongsArray(data);
-    singletonSongs.updateLiSongs(availableSongs, singletonSongs.availableSongs);
-    singletonSongs.createDragDrop('class', 'songs-container__songs-wrapper');
+    quicker().updateLiSongs(availableSongs, singletonSongs.availableSongs);
+    quicker().updateLiSongs(playlist, singletonSongs.playlist);
+    quicker().createDragDrop('class', 'songs-container__songs-wrapper');
+    init(singletonSongs);
   }
 
   const path = './data/initialSongs.json';

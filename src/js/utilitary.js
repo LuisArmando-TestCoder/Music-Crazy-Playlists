@@ -155,11 +155,84 @@ function quicker() {
   }
 
   function keepArrayToLocalStorage(key, array) {
-    localStorage.setItem(key, JSON.stringify(array)); //////////////////////////////////////////////
-    // find out the stringify
+    localStorage.setItem(key, JSON.stringify(array));
+  }
+
+  function createDragDrop(attr, value) {
+    let dragged;
+    const songsWrappers = document.getElementsByClassName('songs-container__songs-wrapper');
+
+    document.addEventListener(`dragstart`, (event) => {
+      dragged = event.target;
+    }, false);
+
+    document.addEventListener(`dragover`, (event) => {
+      event.preventDefault();
+    }, false);
+
+    document.addEventListener(`drop`, (event) => {
+      const elem = event.target;
+
+      if (elem.getAttribute(attr) === value) {
+        elem.insertBefore(dragged, elem.childNodes[0]);
+        composeArray(songsWrappers[0], singletonSongs.availableSongs);
+        keepArrayToLocalStorage('songsArray', singletonSongs.availableSongs);
+        composeArray(songsWrappers[1], singletonSongs.playlist);
+        keepArrayToLocalStorage('playlistArray', singletonSongs.playlist);
+      }
+    }, false);
+  }
+
+  // PRIVATE
+  function composeArray(wrapper, array) {
+    const children = wrapper.children;
+    const composedArray = array;
+
+    composedArray.length = 0;
+    // empties the array without changing reference
+
+    for (let i = 0; i < children.length; i += 1) {
+      const objComposed = JSON.parse(children[i].getAttribute('data-compose'));
+      composedArray.push(objComposed);
+    }
+  }
+
+
+  function updateLiSongs(parent, array) {
+    parent.innerHTML = '';
+    array.forEach((obj) => {
+      quicker().createElementsFromArray(parent, [
+        {
+          name: 'div',
+          attr: {
+            class: 'play-song',
+            draggable: 'true',
+            ondragstart: 'event.dataTransfer.setData("text/plain",null)',
+            'data-compose': JSON.stringify(obj),
+          },
+          children: [
+            {
+              name: 'h4',
+              attr: {
+                class: 'play-song__title',
+              },
+              inner: obj.title,
+            },
+            {
+              name: 'button',
+              attr: {
+                class: 'star',
+              },
+            },
+          ],
+        },
+      ]);
+    });
   }
 
   return {
+    updateLiSongs: updateLiSongs,
+    createDragDrop: createDragDrop,
     keepArrayToLocalStorage: keepArrayToLocalStorage,
     manage: manage,
     numberToTime: numberToTime,
