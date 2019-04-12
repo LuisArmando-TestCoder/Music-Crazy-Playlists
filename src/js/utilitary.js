@@ -221,6 +221,7 @@ function quicker() {
             {
               name: 'button',
               attr: {
+                starred: obj.starred,
                 class: 'star',
               },
             },

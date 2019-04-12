@@ -303,6 +303,10 @@ button:hover {
   font-size: 10px;
 }
 
+[starred=true] {
+  background: #00f;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }

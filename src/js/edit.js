@@ -1,7 +1,6 @@
 (function () {
   const itemEdit = document.getElementById('item-edit');
   const modalCancel = document.getElementById('modal-cancel');
-  console.log(modalCancel);
   const modalSubmit = document.getElementById('modal-submit');
   const modal = document.getElementsByClassName('modals__modal')[0];
   const songsContainer = document.querySelector('.songs-container');
