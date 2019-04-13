@@ -17,7 +17,7 @@
         t.setAttribute('starred', 'false');
       } else t.setAttribute('starred', 'true');
 
-      if (parent == availableSongs) {
+      if (parent === availableSongs) {
         starObject(singletonSongs.availableSongs[index], t);
       quicker().keepArrayToLocalStorage('songsArray', singletonSongs.availableSongs);
       } else {

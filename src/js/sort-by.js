@@ -30,7 +30,7 @@
         sort(array, 'album');
       },
       starred(array) {
-        if (array == availableSongsArray) {
+        if (array === availableSongsArray) {
           availableSongsArray = array.filter((a) => a.starred === 'true');
         } else {
           playlistArray = array.filter((a) => a.starred === 'true');

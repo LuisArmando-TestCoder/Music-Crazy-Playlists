@@ -19,6 +19,7 @@ function init() {
   const prev = document.querySelector('.prev');
   const next = document.querySelector('.next');
   const audioBar = document.querySelector('.audio-bar');
+  const starButton = document.querySelector('.audio-player__middle .star');
 
   let songIndex = 0;
   let playBool = true;
@@ -47,6 +48,7 @@ function init() {
         quicker().styleElems([playButton], buttons.pauseElemStyle);
         songTitle.innerText = singletonSongs.playlist[songIndex].title;
         if (audio.src !== indexSource) audio.src = indexSource;
+        starButton.setAttribute('starred', singletonSongs.playlist[songIndex].starred);
         audio.play(); // ----------------------------------------------- seek 4 bug
         setDefaultImage();
       } else {
@@ -79,6 +81,18 @@ function init() {
     reactToAudioPlayer();
   }
 
+  function starObject(e) {
+    const t = e.target;
+    if (t.getAttribute('starred') === 'true') {
+      t.setAttribute('starred', 'false');
+    } else {
+      t.setAttribute('starred', 'true');
+    }
+    singletonSongs.playlist[songIndex].starred = t.getAttribute('starred');
+    quicker().keepArrayToLocalStorage('playlistArray', singletonSongs.playlist);
+    quicker().updateLiSongs(playlist, singletonSongs.playlist);
+  }
+
   audio.crossOrigin = 'anonymous';
 
   setTimeline(audio);
@@ -98,4 +112,6 @@ function init() {
     reactToAudioPlayer();
   });
   next.addEventListener('click', songEnded);
+
+  starButton.addEventListener('click', starObject);
 }

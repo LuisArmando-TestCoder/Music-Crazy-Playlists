@@ -27,7 +27,7 @@
     const parent = target.parentElement;
     const index = Array.from(parent.children).indexOf(target);
 
-    if (parent == availableSongs) {
+    if (parent === availableSongs) {
       editInputs(singletonSongs.availableSongs[index]);
     } else {
       editInputs(singletonSongs.playlist[index]);
@@ -68,7 +68,7 @@
     e.preventDefault();
     const parent = target.parentElement;
     const index = Array.from(parent.children).indexOf(target);
-    if (parent == availableSongs) {
+    if (parent === availableSongs) {
       editObject(singletonSongs.availableSongs[index]);
       quicker().updateLiSongs(availableSongs, singletonSongs.availableSongs);
       quicker().keepArrayToLocalStorage('songsArray', singletonSongs.availableSongs);

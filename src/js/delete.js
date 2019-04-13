@@ -22,7 +22,7 @@
   function deleteTarget() {
     const parent = target.parentElement;
     const index = Array.from(parent.children).indexOf(target);
-    if (parent == availableSongs) {
+    if (parent === availableSongs) {
       singletonSongs.availableSongs.splice(index, 1);
       quicker().updateLiSongs(availableSongs, singletonSongs.availableSongs);
       quicker().keepArrayToLocalStorage('songsArray', singletonSongs.availableSongs);
